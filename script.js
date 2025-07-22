@@ -1,4 +1,4 @@
-// ===== MENÚ MÓVIL (HAMBURGUESA) =====
+// Menú móvil
 const mobileMenu = document.getElementById('mobile-menu');
 const navbar = document.getElementById('navbar');
 
@@ -8,20 +8,16 @@ if (mobileMenu && navbar) {
   });
 }
 
-// ===== FORMULARIO DE CONTACTO =====
+// Formulario
 const form = document.getElementById("formulario-contacto");
 
 if (form) {
   form.addEventListener("submit", function(e) {
-    e.preventDefault(); // Evita recarga
-
+    e.preventDefault();
     const submitBtn = form.querySelector("button[type='submit']");
     const originalText = submitBtn.innerHTML;
-
-    // Cambiar texto del botón
     submitBtn.innerHTML = "Enviando...";
 
-    // Enviar datos a Formspree
     fetch(form.action, {
       method: "POST",
       body: new FormData(form),
@@ -32,15 +28,14 @@ if (form) {
     .then(response => {
       if (response.ok) {
         alert("Gracias por tu mensaje. Nos contactaremos contigo pronto.");
-        form.reset(); // Limpia el formulario
-        submitBtn.innerHTML = originalText; // Restaura botón
+        form.reset();
+        submitBtn.innerHTML = originalText;
       } else {
-        throw new Error("Error en la respuesta");
+        throw new Error("Error");
       }
     })
-    .catch(error => {
-      console.error("Error:", error);
-      alert("Hubo un error al enviar el mensaje. Por favor, intenta más tarde.");
+    .catch(() => {
+      alert("Hubo un error al enviar. Intenta más tarde.");
       submitBtn.innerHTML = originalText;
     });
   });
