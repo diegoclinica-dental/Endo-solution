@@ -1,0 +1,237 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  background-color: #005b96;
+  color: white;
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo i {
+  color: #00c896;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  color: #00c896;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding-top: 80px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background-color: #00c896;
+  color: white;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #00a878;
+}
+
+/* Especialidades */
+.especialidades {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+}
+
+.especialidades h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.2rem;
+  color: #005b96;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.endodoncia { color: #e74c3c; }
+.ortodoncia { color: #3498db; }
+.estetica { color: #f39c12; }
+.implantologia { color: #2ecc71; }
+.periodoncia { color: #9b59b6; }
+.pediatrica { color: #1abc9c; }
+
+/* Acerca de */
+.acerca {
+  padding: 80px 0;
+  background-color: white;
+}
+
+.acerca h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #005b96;
+}
+
+.beneficios {
+  margin-top: 20px;
+  list-style: none;
+}
+
+.beneficios li {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.beneficios i {
+  color: #00c896;
+  margin-right: 10px;
+}
+
+/* Contacto */
+.contacto {
+  padding: 80px 0;
+  background-color: #005b96;
+  color: white;
+}
+
+.contacto h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#formulario-contacto {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#formulario-contacto input,
+#formulario-contacto textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+}
+
+#formulario-contacto textarea {
+  resize: vertical;
+}
+
+#formulario-contacto button {
+  width: 100%;
+  padding: 12px;
+  background-color: #00c896;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#formulario-contacto button:hover {
+  background-color: #00a878;
+}
+
+/* Footer */
+.footer {
+  background-color: #1a1a1a;
+  color: #ccc;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.social a {
+  color: #ccc;
+  margin: 0 10px;
+  font-size: 1.5rem;
+}
+
+.social a:hover {
+  color: #00c896;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav {
+    display: none; /* Puedes agregar un menú hamburguesa con JS si quieres */
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
