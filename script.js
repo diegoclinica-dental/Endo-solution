@@ -1,4 +1,4 @@
-// Menú móvil (si lo agregas)
+// ===== MENÚ MÓVIL (HAMBURGUESA) =====
 const mobileMenu = document.getElementById('mobile-menu');
 const navbar = document.getElementById('navbar');
 
@@ -8,21 +8,20 @@ if (mobileMenu && navbar) {
   });
 }
 
-// Formulario de contacto
+// ===== FORMULARIO DE CONTACTO =====
 const form = document.getElementById("formulario-contacto");
 
 if (form) {
   form.addEventListener("submit", function(e) {
-    // No necesitas e.preventDefault() si quieres que se envíe
-    // Pero si usas solo alert(), sí lo necesitas
-    e.preventDefault();
+    e.preventDefault(); // Evita recarga
 
-    // Aquí puedes agregar un spinner o mensaje de carga
     const submitBtn = form.querySelector("button[type='submit']");
     const originalText = submitBtn.innerHTML;
+
+    // Cambiar texto del botón
     submitBtn.innerHTML = "Enviando...";
 
-    // Enviar el formulario usando fetch
+    // Enviar datos a Formspree
     fetch(form.action, {
       method: "POST",
       body: new FormData(form),
@@ -33,14 +32,15 @@ if (form) {
     .then(response => {
       if (response.ok) {
         alert("Gracias por tu mensaje. Nos contactaremos contigo pronto.");
-        form.reset();
-        submitBtn.innerHTML = originalText;
+        form.reset(); // Limpia el formulario
+        submitBtn.innerHTML = originalText; // Restaura botón
       } else {
-        throw new Error("Error al enviar");
+        throw new Error("Error en la respuesta");
       }
     })
     .catch(error => {
-      alert("Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.");
+      console.error("Error:", error);
+      alert("Hubo un error al enviar el mensaje. Por favor, intenta más tarde.");
       submitBtn.innerHTML = originalText;
     });
   });
