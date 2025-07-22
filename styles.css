@@ -257,3 +257,65 @@ body {
     font-size: 2rem;
   }
 }
+/* Sección de ubicación */
+.ubicacion {
+  padding: 60px 0;
+  background-color: white;
+}
+
+.ubicacion h2 {
+  text-align: center;
+  color: #003366;
+  margin-bottom: 20px;
+  font-size: 2.2rem;
+}
+
+.ubicacion p {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* Enlace de teléfono */
+.telefono-link {
+  color: #00a88e;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.telefono-link:hover {
+  text-decoration: underline;
+}
+
+/* Botón de cómo llegar */
+.map-actions {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.btn-map {
+  background-color: #003366;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s ease;
+}
+
+.btn-map:hover {
+  background-color: #005b96;
+}
+
+/* Mapa */
+.mapa {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
