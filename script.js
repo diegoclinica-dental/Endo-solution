@@ -1,14 +1,4 @@
-// Menú móvil
-const mobileMenu = document.getElementById('mobile-menu');
-const navbar = document.getElementById('navbar');
-
-if (mobileMenu && navbar) {
-  mobileMenu.addEventListener('click', () => {
-    navbar.classList.toggle('active');
-  });
-}
-
-// Formulario
+// Formulario de contacto
 const form = document.getElementById("formulario-contacto");
 
 if (form) {
@@ -35,7 +25,7 @@ if (form) {
       }
     })
     .catch(() => {
-      alert("Hubo un error al enviar. Intenta más tarde.");
+      alert("Hubo un error. Intenta más tarde.");
       submitBtn.innerHTML = originalText;
     });
   });
