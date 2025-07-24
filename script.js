@@ -1,3 +1,13 @@
+// Menú móvil (hamburguesa)
+const mobileMenu = document.getElementById('mobile-menu');
+const navbar = document.getElementById('navbar');
+
+if (mobileMenu && navbar) {
+  mobileMenu.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+  });
+}
+
 // Formulario de contacto
 const form = document.getElementById("formulario-contacto");
 
