@@ -939,3 +939,10 @@ body {
   display: block;
   text-align: right;
 }
+/* Estilo del logo */
+.logo-img {
+  height: 55px;
+  width: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
