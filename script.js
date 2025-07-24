@@ -3,11 +3,15 @@ const form = document.getElementById("formulario-contacto");
 
 if (form) {
   form.addEventListener("submit", function(e) {
-    e.preventDefault();
+    e.preventDefault(); // Evita recarga
+
     const submitBtn = form.querySelector("button[type='submit']");
     const originalText = submitBtn.innerHTML;
+
+    // Cambiar texto del botón
     submitBtn.innerHTML = "Enviando...";
 
+    // Enviar datos a Formspree
     fetch(form.action, {
       method: "POST",
       body: new FormData(form),
@@ -18,14 +22,15 @@ if (form) {
     .then(response => {
       if (response.ok) {
         alert("Gracias por tu mensaje. Nos contactaremos contigo pronto.");
-        form.reset();
-        submitBtn.innerHTML = originalText;
+        form.reset(); // Limpia el formulario
+        submitBtn.innerHTML = originalText; // Restaura botón
       } else {
-        throw new Error("Error");
+        throw new Error("Error en la respuesta");
       }
     })
-    .catch(() => {
-      alert("Hubo un error. Intenta más tarde.");
+    .catch(error => {
+      console.error("Error:", error);
+      alert("Hubo un error al enviar el mensaje. Por favor, intenta más tarde.");
       submitBtn.innerHTML = originalText;
     });
   });
